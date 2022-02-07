@@ -18,6 +18,7 @@ class CreateEspecialistasTable extends Migration
             $table->string('nombre');
             $table->foreignId('especialidad_id')->constrained('especialidades');
             $table->timestamps();
+            $table->foreignId('user_id')->nullable()->constrained();
         });
     }
 
