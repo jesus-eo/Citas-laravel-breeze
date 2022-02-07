@@ -54,10 +54,14 @@ return [
             'ignore_exceptions' => false,
         ],
 
-        'single' => [
+       /*  'single' => [
             'driver' => 'single',
             'path' => storage_path('logs/laravel.log'),
             'level' => env('LOG_LEVEL', 'debug'),
+        ], */
+        'single' => [
+            'driver' => 'errorlog',
+            'level' => 'debug',
         ],
 
         'daily' => [
