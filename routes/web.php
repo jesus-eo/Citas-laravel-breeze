@@ -33,7 +33,7 @@ Route::get('/dashboard-especialista', function () {
 })->middleware(['auth', 'can:dashboard-especialista'])->name('dashboard-especialista');
 require __DIR__ . '/auth.php';
 
-//Crea un middeleware de grupo en el cual antes de acceder a cualquier ruta debe estar logueado y el can es otro middleware que trae laravel que llama a la  Gate::define('dashboard-especialista' que esta en providers->AuthServi... y comprueba si es paciente sigue la ejecucuión si no da fallo.
+//Crea un middeleware de grupo en el cual antes de acceder a cualquier ruta debe estar logueado y el can es otro middleware que trae laravel que llama a la  Gate::define('dashboard-especialista' que esta en app->providers->AuthServi... y comprueba si es paciente sigue la ejecucuión si no da fallo.
 Route::middleware(['auth', 'can:dashboard-paciente'])->group(function () {
 
     Route::get('/citas', [CitasController::class, 'index'])
